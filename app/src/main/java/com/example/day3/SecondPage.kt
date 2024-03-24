@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
+import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -21,15 +22,19 @@ class SecondPage : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val text1 = findViewById<TextView>(R.id.readTxt);
+        val text1 = findViewById<TextView>(R.id.readTxt)
+        val builder = SpannableStringBuilder()
         val textView: Spannable = SpannableString("Read our")
-        textView.setSpan(ForegroundColorSpan(Color.BLACK), 0, textView.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textView.setSpan(ForegroundColorSpan(Color.BLACK), 0, textView.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        builder.append(textView)
 
-        val privacy: Spannable = SpannableString("Privacy Policy");
-        privacy.setSpan(ForegroundColorSpan(Color.BLUE), 0, privacy.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        val privacy: Spannable = SpannableString("Privacy Policy")
+        privacy.setSpan(ForegroundColorSpan(Color.BLUE), 0, privacy.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        builder.append(" ")
+        builder.append(privacy)
 
+        text1.text = builder
 
-        text1.text = textView
 
     }
 }

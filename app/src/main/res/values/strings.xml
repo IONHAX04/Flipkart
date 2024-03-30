@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Day 3</string>
+
+    <string name="offers">Beauty, Foods, Toys, Gadgets, Electronics, etc..</string>
+    <string name="sports">Sports, Healthcare and More</string>
 </resources>
